@@ -8,6 +8,46 @@ font-size: 40px;
 color:black;
 }
 
+
+
+.date {
+    font-size: 16px;
+    font-family: 'Poiret One', cursive;
+    background-color:white;
+    text-align:left;
+    padding:5px;
+}
+
+
+.title {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    color:#00b7ef;
+    text-align:left;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+
+
+.text {
+    font-family: Arial;
+    color:#c1bfc0;
+    font-size: 16px;
+    text-align:left;
+}
+
+
+
+
+
+.author {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 24px;
+    text-align:right;
+}
+
+
 .user-button{
 padding:20px 50px;
 border:3px dashed #00b7ef;
@@ -17,3 +57,87 @@ font-family:Arial;
 
 }
 
+
+.add-button {
+    margin:10px;
+    padding:20px 50px;
+    display:inline-block;
+    border: 3px dashed #00b7ef;
+    text-decoration:none;
+    color:black;
+    font-family:Arial;
+}
+
+.post-container {
+    max-width:800px;
+    border: 3px solid #00b7ef;
+    margin:10px auto;
+    padding:30px;
+    box-sizing: border-box;
+}
+
+
+
+.collapse-form {
+    border-style: dashed ;
+    border-color:#00b7ef;
+    text-align:left;
+
+}
+
+p  {
+    width:100%;
+    height:100px;
+    margin-bottom:20px;
+}
+
+
+#id_pub_date {
+    font-size: 16px;
+    font-family: 'Poiret One', cursive;
+    background-color:white;
+    text-align:left;
+    padding:5px;
+}
+
+
+#id_title {
+    font-family: Arial;
+    color:#c1bfc0;
+    font-size: 16px;
+    text-align:left;
+}
+
+
+
+#id_text {
+    width:90%;
+    height:100px;
+    margin-bottom:20px;
+    text-align:left;
+}
+
+#id_author {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 24px;
+    float:right;
+}
+
+.save{
+    Fontawesome: check
+    font-size : 16px;
+    background-color: #66CDAA;
+    Cursor: pointer;
+    margin:10px;
+    padding:20px 50px;
+
+}
+
+.delete {
+    Fontawesome:close;
+    font-size : 16px;
+    background-color: red;
+    cursor:pointer;
+    margin:10px;
+    padding:20px 50px;
+}

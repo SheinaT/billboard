@@ -1,22 +1,29 @@
-var Billboards = {};
+var Posts = {};
 
-Billboards.start = function() {
+Posts.start = function() {
     $(document).ready(function() {
-        Billboards.bindButtons();
+        Posts.bindButtons();
     })
 }
 
-Billboards.bindButtons = function() {
+Posts.bindButtons = function() {
 
-    $(".add-button").click(Billboards.displayForm);
+    $(".add-button").click(Posts.displayForm);
 }
 
-Billboards.displayForm=function(){
-console.log("in");
+Posts.displayForm=function(){
 
 $(".collapse-form").css("display", "block")
+$(".delete").click(Posts.cancel);
 }
 
-Billboards.start();
+Posts.cancel=function(){
+
+var newSection= $(".collapse-form").css("display", "none")
+}
+
+
+
+Posts.start();
 
 

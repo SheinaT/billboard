@@ -1,6 +1,7 @@
 {% extends "billboard_app/base.html" %}
 {% block content  %}
 {% if user.is_authenticated %}
+{{user}}
 
 <div class="main-container">
     <div class="row">
@@ -37,8 +38,8 @@
                 {% csrf_token %}
                 {{form.as_p}}
                 <div class=" button-bottom">
-                    <button type="reset" class=" delete">Delete</button>
-                    <button type="submit" class=" save">Save</button>
+                    <button type="reset" class=" delete"></button>
+                    <button type="submit" class=" save"></button>
                 </div>
             </form>
         </div>
