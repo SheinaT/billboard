@@ -14,7 +14,7 @@ Posts.bindButtons = function() {
 Posts.displayForm=function(){
 
 $(".collapse-form").css("display", "block")
-$(".delete").click(Posts.cancel);
+$("#cancel").click(Posts.cancel);
 }
 
 Posts.cancel=function(){
