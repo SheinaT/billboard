@@ -18,7 +18,7 @@
         <button class="user-button">Registration</button>
     </a>
     {% if user.is_authenticated %}
-       {{user}}
+    {{user}}
     <a href="{% url 'login' %}">
         <button class="user-button">Logout</button>
     </a>
@@ -28,12 +28,34 @@
     </a>
     {% endif %}
 </div>
-{% block content %}{% endblock %}
 
+{% if user.is_authenticated %}
 
-</body>
-</html>
+<div class="posts">
+    {% for post in post_list%}
+    <form>
+        <fieldset class="post-wrapper">
+            <div class="date">{{post.pub_date|date:"d/m/Y"}}</div>
+            <div class="title">{{post.title}}</div>
+            <div class="text">{{post.text}}</div>
+            <div class="author">{{post.author}}</div>
+        </fieldset>
+    </form>
+    {%empty%}
+    <div class="no-posts">
+        No messages...<br/>
+        Click the '+' button to add a new message.
+        <div class = "button-wrapper">
+                    <button type="submit" class="add btn btn-default" id="add">+</button>
+            </div>
+    </div>
+    {% endfor %}
+    {%endif%}
 </div>
+
+
+
+
 
 </body>
 </html>
