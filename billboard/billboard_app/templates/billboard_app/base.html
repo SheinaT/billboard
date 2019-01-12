@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Billboard</title>
+    {% load staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Pinyon+Script|Poiret+One" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+</head>
+</head>
+<body>
+<div class="page-header">
+    <h1 class="heading">Billboard</h1>
+    <a href="/register">
+        <button class="user-button">Registration</button>
+    </a>
+    {% if user.is_authenticated %}
+       {{user}}
+    <a href="{% url 'login' %}">
+        <button class="user-button">Logout</button>
+    </a>
+    {% else %}
+    <a href="{% url 'login' %}">
+        <button class="user-button">Login</button>
+    </a>
+    {% endif %}
+</div>
+{% block content %}{% endblock %}
+
+
+</body>
+</html>
+</div>
+
+</body>
+</html>
