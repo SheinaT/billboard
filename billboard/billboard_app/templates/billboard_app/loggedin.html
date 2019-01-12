@@ -1,0 +1,50 @@
+{% extends "billboard_app/base.html" %}
+{% block content  %}
+{% if user.is_authenticated %}
+
+<div class="main-container">
+    <div class="row">
+        <div class=" column" id="box">
+            {% for post in post_list%}
+
+            <div class="post-container">
+                <div class="date">{{post.pub_date|date:"d/m/Y"}}</div>
+                <div class="title">{{post.title}}</div>
+                <div class="text">{{post.text}}</div>
+                <div class="author">{{post.author}}</div>
+
+            </div>
+            {% endfor %}
+
+            <div class="no-post-container">
+                <div class="row">
+                    <div class="column">
+
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="add-button">+</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="collapse-form" style="display:none">
+    <div class="submit-form">
+        <div class="form-container">
+            <form method="POST" class="post-form">
+                {% csrf_token %}
+                {{form.as_p}}
+                <div class=" button-bottom">
+                    <button type="reset" class=" delete">Delete</button>
+                    <button type="submit" class=" save">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+{%endif%}
+{% endblock %}

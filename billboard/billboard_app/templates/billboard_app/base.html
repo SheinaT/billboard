@@ -16,46 +16,16 @@
     <h1 class="heading">Billboard</h1>
     <a href="/register">
         <button class="user-button">Registration</button>
-    </a>
-    {% if user.is_authenticated %}
-    {{user}}
-    <a href="{% url 'login' %}">
-        <button class="user-button">Logout</button>
-    </a>
-    {% else %}
-    <a href="{% url 'login' %}">
-        <button class="user-button">Login</button>
-    </a>
-    {% endif %}
+        {% if user.is_authenticated %}
+            {{user}}
+            <a href="{% url 'logout' %}"> <button class="user-button">Logout</button></a>
+        {% else %}
+             <a href="{% url 'login' %}"> <button class="user-button">Login</button></a>
+        {% endif %}
+
+        {%block content%}
+        {%endblock %}
+
 </div>
-
-{% if user.is_authenticated %}
-
-<div class="posts">
-    {% for post in post_list%}
-    <form>
-        <fieldset class="post-wrapper">
-            <div class="date">{{post.pub_date|date:"d/m/Y"}}</div>
-            <div class="title">{{post.title}}</div>
-            <div class="text">{{post.text}}</div>
-            <div class="author">{{post.author}}</div>
-        </fieldset>
-    </form>
-    {%empty%}
-    <div class="no-posts">
-        No messages...<br/>
-        Click the '+' button to add a new message.
-        <div class = "button-wrapper">
-                    <button type="submit" class="add btn btn-default" id="add">+</button>
-            </div>
-    </div>
-    {% endfor %}
-    {%endif%}
-</div>
-
-
-
-
-
 </body>
 </html>
